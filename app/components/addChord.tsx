@@ -14,7 +14,7 @@ import ChordSelector from 'components/chordSelector';
 import { useState } from 'react';
 
 export default function AddChord ({ appendChord }: { appendChord: ({ chord }: { chord: Chord }) => void }) {
-    const [selectedChord, updateChord] = useState(new Chord('C'));
+    const [selectedChord, updateChord] = useState(new Chord({ chordName: 'C', chordNotes: ['C4', 'E4', 'G4'] }));
 
     return (
         <Popover>

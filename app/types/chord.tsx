@@ -1,11 +1,17 @@
 export default class Chord {
-    chord: string;
+    chordName: string;
+    chordNotes: string[];
 
-    constructor(chord: string) {
-        this.chord = chord;
+    constructor({ chordName, chordNotes }: { chordName: string, chordNotes: string[] }) {
+        this.chordName = chordName;
+        this.chordNotes = chordNotes;
+    }
+
+    getNotes() {
+        return this.chordNotes;
     }
 
     toString() {
-        return this.chord;
+        return this.chordName;
     }
 }
