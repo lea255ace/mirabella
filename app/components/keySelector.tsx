@@ -7,7 +7,7 @@ import { Dispatch, SetStateAction } from 'react';
 import Key from 'types/key';
 
 export default function KeySelector({ currentKey, updateKey }:
-    { currentKey: Key, updateKey: Dispatch<SetStateAction<Key>>}) {
+    { currentKey: Key, updateKey: (key: Key) => void}) {
 
     return <>
         <Select size='lg' fontWeight='bold'

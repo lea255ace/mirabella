@@ -1,5 +1,7 @@
 import React from 'react';
 import { UIProvider } from 'context/chakraProvider';
+import { InstrumentProvider } from 'context/instrumentProvider';
+import { StyleProvider } from 'context/styleProvider';
 
 //TODO(MW): Seems like this should be in page.js, but can't go there until it's converted to a server component.
 export const metadata = {
@@ -11,7 +13,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang='en'>
             <body>
                 <UIProvider>
-                    {children}
+                    <StyleProvider>
+                        <InstrumentProvider>
+                            {children}
+                        </InstrumentProvider>
+                    </StyleProvider>
                 </UIProvider>
             </body>
         </html>
